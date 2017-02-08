@@ -1,0 +1,164 @@
+body {
+	background-color: #fff;
+}
+
+ul {
+	margin-left: 0px;
+	padding-left: 0px;
+}
+
+h2 {
+	margin: 0px;
+	padding: 0px;
+	font-size: 40px;
+	font-family: 'Open Sans Condensed', sans-serif;
+	color: #AB25AB;
+}
+
+li {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+a:hover {
+	color: inherit;
+}
+
+.main_header img, h2, ul {
+	display:inline-block;
+}
+
+.main_menu {
+	margin: 0px;
+}
+
+.site_name {
+	font-family: 'Pacifico', cursive;
+	font-size: 25px;
+	color: #B13AB1;
+	display: table-cell;
+	padding-left: 10px;
+}
+.main_header {
+	background-color: rgba(255,255,255,0.7);
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+	border-bottom: 1px solid #ddd;
+	z-index: 4;
+	position: fixed;
+}
+
+.main_menu li {
+	display:inline-block;
+	list-style: none;
+}
+
+.container {
+	margin: 0px 0px;
+	padding: 0px;
+	width: 100%;
+}
+
+.menu_and_avatar{ 
+	display: table-cell;
+	font-family: 'Open Sans Condensed', sans-serif;
+	text-align: right;
+}
+
+.menu_and_avatar li {
+	margin-left: 25px;
+	font-size: 20px;
+}
+
+.menu_and_avatar ul {
+	margin-right: 30px;
+}
+
+.menu_and_avatar a {
+	color: #AB25AB;
+	text-decoration: none;
+}
+
+.menu_and_avatar a:hover {
+	text-decoration: underline;
+}
+
+#header_wrapper {
+	display: table;
+	padding: 10px;
+}
+
+.right_search {
+	margin-top: 10px;
+}
+
+.right_search input {
+	color: #000;
+	border-radius: 0px;
+}
+
+.right_search input:hover {
+	box-shadow: 0 0 4px #E04DE0;
+}
+.right_search input:focus {
+	border-color: #E04DE0;
+}
+
+.right_search_button {
+	top: 0px;
+	background-color: #ffffff;
+	color: #AB25AB;
+	cursor: pointer;
+	border-radius: 0px;
+}
+
+.right_search_button:hover {
+	background-color: #E04DE0;
+	color: #ffffff;
+	text-decoration: none;
+}
+
+.right_search_button:focus {
+
+}
+
+.center_section {
+}
+
+.left_section {
+	border-right: 1px solid #ddd;
+	min-height: 1500px;
+}
+
+.main_content {
+	margin-top: 52px;
+}
+
+.catalogue {
+	margin: 10px;
+	margin-top: 30px;
+
+}
+
+.catalogue h2 {
+	margin-bottom: 20px;
+}
+
+.catalogue li {
+	font-family: 'Slabo 27px', serif;
+	font-size: 20px;
+	color: #474448;
+}
+
+.catalogue ul {
+	margin-left: 15px;
+}
+
+.li_level_2 {
+	display: none;
+}
