@@ -65,6 +65,18 @@ a:hover {
 	list-style: none;
 }
 
+.centered_logo {
+	text-align: center;
+	display: table-cell;
+	position: relative;
+	right: 23px;
+}
+
+.hamburger {
+	position: relative;
+	bottom: 5px;
+}
+
 .container {
 	margin: 0px 0px;
 	padding: 0px;
@@ -98,6 +110,7 @@ a:hover {
 #header_wrapper {
 	display: table;
 	padding: 10px;
+	width: 100%;
 }
 
 .right_search {
@@ -135,11 +148,14 @@ a:hover {
 }
 
 .center_section {
+	margin-left: 22.6%;
 }
 
 .left_section {
 	border-right: 1px solid #ddd;
 	min-height: 1150px;
+	position:fixed;
+	z-index: 4;
 }
 
 .main_content {
