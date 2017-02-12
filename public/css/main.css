@@ -260,3 +260,13 @@ a:hover {
 	font-size: 20px;
 	font-family: 'Open Sans Condensed', sans-serif;
 }
+
+.dropdown-menu {
+	border-radius: 0px;
+	font-family: 'Open Sans Condensed', sans-serif;
+	z-index: -1;
+}
+
+.dropdown-menu li a {
+	color: #AB25AB;
+}
