@@ -17,7 +17,7 @@ namespace Application\Model;
 class Blog {
     
     public $id;
-    public $author;
+    public $author;         // Array of user data
     public $title;
     public $description;
     public $created;
