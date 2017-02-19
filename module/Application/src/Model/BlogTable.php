@@ -54,4 +54,12 @@ class BlogTable {
         
         return $results->current(); 
     }
+    
+    /**
+     * Saves blog in blogs table
+     * @param \Application\Model\Blog $blog
+     */
+    public function saveBlog(Blog $blog) {
+        
+    }
 }
