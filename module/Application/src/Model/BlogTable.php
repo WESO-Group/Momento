@@ -36,6 +36,8 @@ class BlogTable {
                     array('author_name'    => 'name',
                           'author_surname' => 'surname',
                           'author_nickname'=> 'nickname'));
+            
+            $select->order("created DESC");
         });
         
         return $blogs;
