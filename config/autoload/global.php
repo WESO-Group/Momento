@@ -12,5 +12,11 @@
  */
 
 return [
-    // ...
+    'db' => [
+        'driver'  => 'Pdo',
+        'dsn'     => 'mysql:dbname=momento;host=localhost',
+        'driver_options' => array(
+                PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES UTF8"
+        ),
+    ]
 ];
