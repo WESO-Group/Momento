@@ -24,6 +24,10 @@ class IndexController extends AbstractActionController
         $this->blogsTable = $table;
     }
     
+    /**
+     * Displays the list of modules
+     * @return ViewModel
+     */
     public function indexAction()
     {
         return new ViewModel([
