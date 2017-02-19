@@ -17,4 +17,4 @@ LIMIT 0, 1000
 INSERT INTO `users` (`id`,`name`,`surname`,`nickname`,`gender`,`description`,`age`,`registration_date`,`lastseen_date`,`level`) 
        VALUES (1,'Георгий','Попов','ambulance','M','Администратор, разработчик этого сайта.',20,'2019-02-20 17:00:00','2019-02-20 17:00:00',1);
 INSERT INTO `users` (`id`,`name`,`surname`,`nickname`,`gender`,`description`,`age`,`registration_date`,`lastseen_date`,`level`) 
-       VALUES (2,'Артём','Попов','deviling42','M','Администратор, модератор, верстальщик',20,'2019-02-20 17:00:00','2017-02-20 17:00:00',1);
+       VALUES (2,'Артём','Попов','deviling42','M','Администратор, модератор, верстальщик',20,'2019-02-20 20:00:00','2017-02-20 17:00:00',1);
