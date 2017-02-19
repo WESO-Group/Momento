@@ -23,6 +23,9 @@ class Blog {
     public $created;
     public $text;
 
+    /**
+     * Constructs a blog item
+     */
     public function __construct() {
 
     }
