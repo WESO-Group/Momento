@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS `momento`.`blogs` (
   `created` VARCHAR(45) NOT NULL,
   `text` LONGTEXT NOT NULL,
   `title` VARCHAR(50) NOT NULL,
-  `description` VARCHAR(200) NOT NULL,
+  `description` VARCHAR(350) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `id_UNIQUE` (`id` ASC))
 ENGINE = InnoDB
