@@ -16,6 +16,10 @@ class IndexController extends AbstractActionController
 {
     private $blogsTable;
     
+    /**
+     * Constructor
+     * @param BlogTable $table
+     */
     public function __construct(BlogTable $table) {
         $this->blogsTable = $table;
     }
