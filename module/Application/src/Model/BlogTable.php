@@ -24,7 +24,6 @@ class BlogTable {
     
     public function getBlogs($limit = -1, $offset = 0) {
         
-        xdebug_break();
         $blogs = $this->table->select(function(Select $select) use ($limit, $offset) {
             $select->offset($offset);
             
