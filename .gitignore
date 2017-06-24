@@ -3,4 +3,4 @@
 /config/*.dist
 *.dist
 /config/autoload/local.php
-
+.idea/
