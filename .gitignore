@@ -4,4 +4,3 @@
 *.dist
 /config/autoload/local.php
 .idea/
-/public/img/users
