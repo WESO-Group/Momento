@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<section class="container row main_content" style="display: table">
+<section class="row main_content" style="display: table">
     <div class="col-md-3 left_section hidden-xs hidden-sm" style="display: table-cell">
         <div class="right_search input-group">
             <input class="form-control" placeholder="Search query here">
@@ -26,12 +26,11 @@
     <div class="col-md-7 center_section" style="display: table-cell" >
         <div class="center_section_wrapper">
             <h2 class="create_post_label"><a href="#">Create Post</a></h2>
-            
+
             <?php foreach ($blogs as $blog): ?>
             <div class="post_card">
                 <header class="post_header">
-                    <span class="glyphicon glyphicon-user post_avatar">
-                    </span>
+                    <img href="#" alt="some" width="50px" height="50px"></img>
                     <div class="post_info">
                         <p><?= $this->escapeHtml($blog->getAuthorDisplayName()) ?></p>
                         <small><?= $this->escapeHtml($blog->created) ?></small>
@@ -43,8 +42,8 @@
                 </div>
             </div>
             <?php endforeach; ?>
-            
+
         </div>
     </div>
-    <div class="col-md-2" style="display: table-cell" ></div>
+    <div class="col-md-2 hidden-xs hidden-sm" style="display: table-cell" ></div>
 </section>

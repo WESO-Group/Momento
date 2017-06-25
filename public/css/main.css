@@ -84,7 +84,7 @@ a:hover {
 	width: 100%;
 }
 
-.menu_and_avatar{ 
+.menu_and_avatar{
 	display: table-cell;
 	font-family: 'Open Sans Condensed', sans-serif;
 	text-align: right;
@@ -116,6 +116,7 @@ a:hover {
 
 .right_search {
 	margin-top: 10px;
+  margin-left: 15px;
 }
 
 .right_search input {
@@ -149,14 +150,14 @@ a:hover {
 }
 
 .center_section {
-	margin-left: 22.6%;
+	min-height: 1024px;
+	margin-left: 32px;
 }
 
 .left_section {
 	border-right: 1px solid #ddd;
 	min-height: 1150px;
-	position:fixed;
-	z-index: 4;
+	max-width: 270px;
 }
 
 .main_content {
@@ -164,7 +165,7 @@ a:hover {
 }
 
 .catalogue {
-	margin: 10px;
+	margin: 15px;
 	margin-top: 30px;
 
 }
