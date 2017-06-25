@@ -10,6 +10,7 @@ namespace Application;
 use Application\Controller\IndexController;
 use Application\Model\Blog;
 use Application\Model\BlogTable;
+use Application\Model\User;
 use Zend\Db\Adapter\AdapterInterface;
 use Zend\Db\ResultSet\ResultSet;
 use Zend\Db\TableGateway\TableGateway;
@@ -31,8 +32,10 @@ class Module implements
         return array(
             'factories' => [
                 BlogTable::class => function($container) {
-                    $gateway = $container->get(Model\BlogTableGateway::class);
-                    return new BlogTable($gateway);
+                    $blogsGateway = $container->get(Model\BlogTableGateway::class);
+                    $usersGateway = $container->get(Model\UserTableGateway::class);
+
+                    return new BlogTable($blogsGateway, $usersGateway);
                 },
                 Model\BlogTableGateway::class => function($containter) {
                     $adapter = $containter->get(AdapterInterface::class);
@@ -40,7 +43,14 @@ class Module implements
                     $resultSetProto->setArrayObjectPrototype(new Blog());
 
                     return new TableGateway('blogs', $adapter, null, $resultSetProto);
-                }
+                },
+                Model\UserTableGateway::class => function($sm) {
+                    $adapter = $sm->get(AdapterInterface::class);
+                    $resultSetProto = new ResultSet();
+                    $resultSetProto->setArrayObjectPrototype(new User());
+
+                    return new TableGateway('users', $adapter, null, $resultSetProto);
+                },
             ]
         );
     }

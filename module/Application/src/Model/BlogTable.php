@@ -17,29 +17,43 @@ class BlogTable {
      * @var type TableGatewayInterface
      */
     private $table;
+
+    /**
+     *
+     * @var type TableGatewayInterface
+     */
+    private $userTable;
     
-    public function __construct($table) {
+    public function __construct($table, $userTable) {
         $this->table = $table;
+        $this->userTable = $userTable;
     }
     
     public function getBlogs($limit = -1, $offset = 0) {
-        
         $blogs = $this->table->select(function(Select $select) use ($limit, $offset) {
             $select->offset($offset);
             
             if ( $limit !== -1 ) {
                 $select->limit($limit);
             }
-            
-            $select->join(
-                    'users', 'users.id = blogs.author',
-                    array('author_name'    => 'name',
-                          'author_surname' => 'surname',
-                          'author_nickname'=> 'nickname'));
-            
+
+            $select->join(['u' => 'users'], 'u.id = author', [
+                "user.id"           => "id",
+                "user.name"         => "name",
+                "user.surname"      => "surname",
+                "user.nickname"     => "nickname",
+                "user.gender"       => "gender",
+                "user.description"  => "description",
+                "user.age"          => "age",
+                "user.registration_date" => "registration_date",
+                "user.lastseen_date"     => "lastseen_date",
+                "user.level"        => "level",
+                "user.avatar"       => "avatar",
+            ], Select::JOIN_INNER);
+
             $select->order("created DESC");
         });
-        
+
         return $blogs;
     }
     
