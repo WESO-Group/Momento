@@ -156,7 +156,7 @@ a:hover {
 .left_section {
 	border-right: 1px solid #ddd;
 	min-height: 1150px;
-	min-width: 310px;
+	max-width: 270px;
 	position:fixed;
 	z-index: 4;
 }
