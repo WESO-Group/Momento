@@ -84,7 +84,7 @@ a:hover {
 	width: 100%;
 }
 
-.menu_and_avatar{ 
+.menu_and_avatar{
 	display: table-cell;
 	font-family: 'Open Sans Condensed', sans-serif;
 	text-align: right;
@@ -150,6 +150,7 @@ a:hover {
 
 .center_section {
 	margin-left: 22.6%;
+	min-height: 1024px;
 }
 
 .left_section {
