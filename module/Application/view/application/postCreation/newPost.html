@@ -1,0 +1,73 @@
+<html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <title>Momento</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!-- Le styles -->
+      <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Open+Sans+Condensed:300|Pacifico|Slabo+27px" media="screen" rel="stylesheet" type="text/css">
+      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css">
+      <link href="/home/apopov/Документы/Programming/Momento/public/css/main.css" media="screen" rel="stylesheet" type="text/css">
+      <link href="/img/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
+      <link href="css/newPost.css" rel="stylesheet" type="text/css">
+      <!-- Scripts -->
+      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <script type="text/javascript" src="js/common.js"></script>
+      <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+      <script>tinymce.init({ selector:'textarea' });</script>
+      <script src="https://cloud.tinymce.com/stable/plugins.min.js?apiKey=your_API_key"></script>
+</head>
+    <body>
+       <div class="container">
+            <header class="main_header row">
+                <div class="col-md-12" id="header_wrapper">
+                    <h2 class="site_name hidden-xs">Momento</h2>
+                    <div class="dropdown visible-xs">
+                        <div class="dropdown-toggle hamburger visible-xs" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            <span class="glyphicon glyphicon-menu-hamburger"></span>
+                        </div>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <li><a href="#">Donate</a></li>
+                            <li><a href="#">Our mission</a></li>
+                            <li><a href="#">Top posts</a></li>
+                            <li><a href="#">News</a></li>
+                            <li><a href="#">Log in</a></li>
+                        </ul>
+                    </div>
+                    <div class="centered_logo"><h2 class="site_name visible-xs">Momefnto</h2></div>
+                    <div class="drop_down">
+                    </div>
+                    <div class="menu_and_avatar">
+                        <ul class="main_menu hidden-xs">
+                            <li><a href="#">Donate</a></li>
+                            <li><a href="#">Our mission</a></li>
+                            <li><a href="#">Top posts</a></li>
+                            <li><a href="#">News</a></li>
+                            <li><a href="#">Log in</a></li>
+                        </ul>
+                        <img src="" style="display:none" alt=avatar id="avatar_pic">
+                    </div>
+                </div>
+            </header>
+        </div>
+        <div class="main_content container row" style="display: table">
+          <div class="centered_content">
+            <div class="new_post_info">
+              <div class="avatar_cell">
+              </div>
+              <div class="after_avatar">
+                <h2 class="new_post_label">New post</h2>
+                <div class="field_with_caption subject_field">
+                  <h3>subject</h3>
+                  <input placeholder="Enter your subject here"/>
+                </div>
+              </div>
+            </div>
+            <textarea class="new_post_textarea"></textarea>
+          </div>
+        </div>
+        <footer class="main_footer">
+            <small>&copy 2017. NIC SPB ETU. All rights reserved.</small>
+        </footer>
+    </body>

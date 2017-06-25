@@ -277,3 +277,32 @@ a:hover {
 .dropdown-menu li a {
 	color: #AB25AB;
 }
+
+/* common elements */
+
+/* field with caption */
+.field_with_caption {
+	display: block;
+	width: 350px;
+}
+
+.field_with_caption input{
+	border: 1px solid rgb(204,204,204);
+	padding: 9px;
+	display: block;
+	margin: 0px;
+}
+
+.field_with_caption input:hover {
+	box-shadow: 0 0 4px #E04DE0;
+}
+
+.field_with_caption input:focus {
+	border-color: #E04DE0;
+}
+
+.field_with_caption h3 {
+	font-size: 18px;
+	margin-bottom: 4px;
+	color: #272627;
+}
