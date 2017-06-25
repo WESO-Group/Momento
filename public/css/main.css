@@ -270,7 +270,8 @@ a:hover {
 .dropdown-menu {
 	border-radius: 0px;
 	font-family: 'Open Sans Condensed', sans-serif;
-	z-index: -1;
+	top: 28px;
+	left: -11px;
 }
 
 .dropdown-menu li a {
