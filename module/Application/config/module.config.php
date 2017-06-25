@@ -40,4 +40,10 @@ return [
             __DIR__ . '/../view',
         ],
     ],
+
+    'view_helpers' => [
+        'invokables' => [
+            'avatar' => 'Application\View\Helper\AvatarHelper'
+        ]
+    ]
 ];
