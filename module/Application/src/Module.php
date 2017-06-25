@@ -15,12 +15,12 @@ use Zend\Db\ResultSet\ResultSet;
 use Zend\Db\TableGateway\TableGateway;
 use Zend\ModuleManager\Feature;
 
-class Module implements 
+class Module implements
         Feature\ConfigProviderInterface,
         Feature\ServiceProviderInterface,
         Feature\ControllerProviderInterface
 {
-    const VERSION = '3.0.2dev';
+    const VERSION = '0.0.1';
 
     public function getConfig()
     {
@@ -38,13 +38,13 @@ class Module implements
                     $adapter = $containter->get(AdapterInterface::class);
                     $resultSetProto = new ResultSet();
                     $resultSetProto->setArrayObjectPrototype(new Blog());
-                    
+
                     return new TableGateway('blogs', $adapter, null, $resultSetProto);
                 }
             ]
         );
     }
-    
+
     public function getControllerConfig() {
         return [
             'factories' => [
