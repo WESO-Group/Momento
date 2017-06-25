@@ -1,7 +1,7 @@
 {
     "name": "Momento blog",
     "description": "Nice looking, powerful blog written on php 7.0",
-    "version": "0.0.1"
+    "version": "0.0.1",
     "type": "project",
     "license": "BSD-3-Clause",
     "keywords": [
