@@ -27,26 +27,31 @@
         <div class="center_section_wrapper">
             <h2 class="create_post_label"><a href="#">Create Post</a></h2>
 
+            <!-- RENDER BLOG LIST -->
             <?php foreach ($blogs as $blog): ?>
             <div class="post_card">
                 <header class="post_header">
-                    <img src="<?= $this->avatar($blog->author->avatar) ?>"
-                         alt="<?= $blog->author->nickname . "avatar" ?>"
-                         width="50px" height="50px">
 
-                    </img>
-                    <div class="post_info">
-                        <p><?= $this->escapeHtml($blog->author->getDisplayName()) ?></p>
-                        <small><?= $this->escapeHtml($blog->created) ?></small>
-                    </div>
-                    <h2><?= $this->escapeHtml($blog->title) ?></h2>
+                  <div class="avatar_container">
+                      <img src="<?= $this->avatar($blog->author->avatar) ?>"
+                           alt="<?= $blog->author->nickname . "avatar" ?>"
+                           width="50px" height="50px">
+                  </div>
+                  <div class="post_info">
+                      <p><?= $this->escapeHtml($blog->author->getDisplayName()) ?></p>
+                      <small><?= $this->escapeHtml($blog->created) ?></small>
+                  </div>
+
+                  <h2 class="post_desc"><?= $this->escapeHtml($blog->title) ?></h2>
+
                 </header>
                 <div class="post_content">
                     <?= $this->escapeHtml($blog->description) ?>
                 </div>
             </div>
             <?php endforeach; ?>
-
+            <!-- END RENDER BLOG LIST -->
+            
         </div>
     </div>
     <div class="col-md-2 hidden-xs hidden-sm" style="display: table-cell" ></div>

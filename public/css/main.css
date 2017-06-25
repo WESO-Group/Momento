@@ -217,26 +217,31 @@ a:hover {
 	border-bottom: 1px solid #ddd;
 	padding: 8px;
 	width:100%;
+	display: table;
 }
 
 .post_header h2 {
 	font-size: 28px;
 	font-weight: bold;
-	display:inline-block;
 	margin-left: 15px;
-	position: relative;
-	bottom: 5px;
-}
-
-.post_avatar {
-	font-size: 40px;
-	padding: 10px;
-	border: 1px solid #ddd;
 }
 
 .post_info {
-	display: inline-block;
+	display: table-cell;
 	margin-left: 10px;
+	width: 20%;
+}
+
+.avatar_container {
+	display: table-cell;
+	width: 15%;
+}
+
+.post_desc {
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+	height: 100%;
 }
 
 .post_content {
@@ -265,7 +270,8 @@ a:hover {
 .dropdown-menu {
 	border-radius: 0px;
 	font-family: 'Open Sans Condensed', sans-serif;
-	z-index: -1;
+	top: 28px;
+	left: -11px;
 }
 
 .dropdown-menu li a {
