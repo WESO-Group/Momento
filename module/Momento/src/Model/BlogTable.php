@@ -6,7 +6,7 @@
  * and open the template in the editor.
  */
 
-namespace Application\Model;
+namespace Momento\Model;
 
 use Zend\Db\Sql\Select;
 
@@ -72,9 +72,9 @@ class BlogTable {
     
     /**
      * Saves blog in blogs table
-     * @param \Application\Model\Blog $blog
+     * @param \Application\Model\Post $blog
      */
-    public function saveBlog(Blog $blog) {
+    public function saveBlog(Post $blog) {
         
     }
 }

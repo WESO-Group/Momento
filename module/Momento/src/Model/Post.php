@@ -6,15 +6,15 @@
  * and open the template in the editor.
  */
 
-namespace Application\Model;
+namespace Momento\Model;
 
 /**
- * Description of Blog
+ * Description of Post
  *
  * TODO: Maybe we can use ArrayAccess method?
  * @author jorgen
  */
-class Blog {
+class Post {
 
     public $id;
     public $authorId;         // Array of user data

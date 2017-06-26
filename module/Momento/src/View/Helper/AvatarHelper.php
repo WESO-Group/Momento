@@ -1,6 +1,6 @@
 <?php
 
-namespace Application\View\Helper;
+namespace Momento\View\Helper;
 
 use Zend\View\Helper\AbstractHelper;
 
@@ -8,7 +8,7 @@ use Zend\View\Helper\AbstractHelper;
  * Class AvatarHelper
  * Helps finding user avatars.
  *
- * @package Application
+ * @package Momento
  */
 class AvatarHelper extends AbstractHelper {
 

@@ -5,7 +5,7 @@
  * @license   http://framework.zend.com/license/new-bsd New BSD License
  */
 
-namespace Application;
+namespace Momento;
 
 use Zend\Router\Http\Literal;
 
@@ -43,7 +43,7 @@ return [
 
     'view_helpers' => [
         'invokables' => [
-            'avatar' => 'Application\View\Helper\AvatarHelper'
+            'avatar' => 'Momento\View\Helper\AvatarHelper'
         ]
     ]
 ];

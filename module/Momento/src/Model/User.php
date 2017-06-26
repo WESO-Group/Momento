@@ -6,7 +6,7 @@
  * Time: 18:55
  */
 
-namespace Application\Model;
+namespace Momento\Model;
 
 
 class User

@@ -5,12 +5,12 @@
  * @license   http://framework.zend.com/license/new-bsd New BSD License
  */
 
-namespace Application;
+namespace Momento;
 
-use Application\Controller\IndexController;
-use Application\Model\Blog;
-use Application\Model\BlogTable;
-use Application\Model\User;
+use Momento\Controller\IndexController;
+use Momento\Model\Post;
+use Momento\Model\BlogTable;
+use Momento\Model\User;
 use Zend\Db\Adapter\AdapterInterface;
 use Zend\Db\ResultSet\ResultSet;
 use Zend\Db\TableGateway\TableGateway;
@@ -40,7 +40,7 @@ class Module implements
                 Model\BlogTableGateway::class => function($containter) {
                     $adapter = $containter->get(AdapterInterface::class);
                     $resultSetProto = new ResultSet();
-                    $resultSetProto->setArrayObjectPrototype(new Blog());
+                    $resultSetProto->setArrayObjectPrototype(new Post());
 
                     return new TableGateway('blogs', $adapter, null, $resultSetProto);
                 },
