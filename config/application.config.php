@@ -1,12 +1,12 @@
 <?php
 /**
- * If you need an environment-specific system or application configuration,
+ * If you need an environment-specific system or momento configuration,
  * there is an example in the documentation
  * @see https://docs.zendframework.com/tutorials/advanced-config/#environment-specific-system-configuration
  * @see https://docs.zendframework.com/tutorials/advanced-config/#environment-specific-application-configuration
  */
 return [
-    // Retrieve list of modules used in this application.
+    // Retrieve list of modules used in this momento.
     'modules' => require __DIR__ . '/modules.config.php',
 
     // These are various options for the listeners attached to the ModuleManager
@@ -33,7 +33,7 @@ return [
         'config_cache_enabled' => true,
 
         // The key used to create the configuration cache file name.
-        'config_cache_key' => 'application.config.cache',
+        'config_cache_key' => 'momento.config.cache',
 
         // Whether or not to enable a module class map cache.
         // If enabled, creates a module class map cache which will be used
@@ -41,7 +41,7 @@ return [
         'module_map_cache_enabled' => true,
 
         // The key used to create the class map cache file name.
-        'module_map_cache_key' => 'application.module.cache',
+        'module_map_cache_key' => 'momento.module.cache',
 
         // The path in which to cache merged configuration.
         'cache_dir' => 'data/cache/',

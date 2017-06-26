@@ -6,9 +6,9 @@
  */
 
 /**
- * List of enabled modules for this application.
+ * List of enabled modules for this momento.
  *
- * This should be an array of module namespaces used in the application.
+ * This should be an array of module namespaces used in the momento.
  */
 return [
     'Zend\Db',

@@ -47,7 +47,7 @@ return [
 
             /**
              * The cache directory is used in the version check and for every storage type that writes to the disk.
-             * Note: The default value assumes that the current working directory is the application root.
+             * Note: The default value assumes that the current working directory is the momento root.
              *
              * Expects: string
              * Default: 'data/cache'

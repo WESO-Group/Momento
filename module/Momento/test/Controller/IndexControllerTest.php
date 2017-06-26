@@ -33,7 +33,7 @@ class IndexControllerTest extends AbstractHttpControllerTestCase
     {
         $this->dispatch('/', 'GET');
         $this->assertResponseStatusCode(200);
-        $this->assertModuleName('application');
+        $this->assertModuleName('momento');
         $this->assertControllerName(IndexController::class); // as specified in router's controller name alias
         $this->assertControllerClass('IndexController');
         $this->assertMatchedRouteName('home');
