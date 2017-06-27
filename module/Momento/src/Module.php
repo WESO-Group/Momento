@@ -8,13 +8,13 @@
 namespace Momento;
 
 use Momento\Controller\IndexController;
-use Momento\Model\Post;
-use Momento\Model\BlogTable;
-use Momento\Model\User;
-use Zend\Db\Adapter\AdapterInterface;
-use Zend\Db\ResultSet\ResultSet;
-use Zend\Db\TableGateway\TableGateway;
+use Momento\Factory\IndexControllerFactory;
+use Momento\Factory\PostSqlRepositoryFactory;
+use Momento\Model\PostRepository;
+use Momento\Model\PostRepositoryInterface;
+use Momento\Model\PostSqlRepository;
 use Zend\ModuleManager\Feature;
+use Zend\ServiceManager\Factory\InvokableFactory;
 
 class Module implements
         Feature\ConfigProviderInterface,
@@ -31,26 +31,12 @@ class Module implements
     public function getServiceConfig() {
         return array(
             'factories' => [
-                BlogTable::class => function($container) {
-                    $blogsGateway = $container->get(Model\BlogTableGateway::class);
-                    $usersGateway = $container->get(Model\UserTableGateway::class);
+                PostRepository::class => InvokableFactory::class,
+                PostSqlRepository::class => PostSqlRepositoryFactory::class
+            ],
 
-                    return new BlogTable($blogsGateway, $usersGateway);
-                },
-                Model\BlogTableGateway::class => function($containter) {
-                    $adapter = $containter->get(AdapterInterface::class);
-                    $resultSetProto = new ResultSet();
-                    $resultSetProto->setArrayObjectPrototype(new Post());
-
-                    return new TableGateway('blogs', $adapter, null, $resultSetProto);
-                },
-                Model\UserTableGateway::class => function($sm) {
-                    $adapter = $sm->get(AdapterInterface::class);
-                    $resultSetProto = new ResultSet();
-                    $resultSetProto->setArrayObjectPrototype(new User());
-
-                    return new TableGateway('users', $adapter, null, $resultSetProto);
-                },
+            'aliases' => [
+                PostRepositoryInterface::class => PostSqlRepository::class
             ]
         );
     }
@@ -58,11 +44,7 @@ class Module implements
     public function getControllerConfig() {
         return [
             'factories' => [
-                IndexController::class => function($container) {
-                    return new IndexController(
-                            $container->get(BlogTable::class)
-                    );
-                }
+                IndexController::class => IndexControllerFactory::class,
             ]
         ];
     }

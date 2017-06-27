@@ -9,7 +9,21 @@
 namespace Momento\Model;
 
 
-class PostRepositoryInterface
+interface PostRepositoryInterface
 {
+    /**
+     * Return all posts. Each entry is Post item.
+     *
+     * @return Post[]
+     * @see Post
+     */
+    public function findAllPosts();
 
+    /**
+     * Return post specified by $id.
+     *
+     * @param $id Post id in db
+     * @return Post
+     */
+    public function findPost($id);
 }

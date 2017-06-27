@@ -16,40 +16,104 @@ namespace Momento\Model;
  */
 class Post {
 
-    public $id;
-    public $authorId;         // Array of user data
-    public $title;
-    public $description;
-    public $created;
-    public $text;
-
-    public $author;
+    private $id;
+    private $author;
+    private $title;
+    private $created;
+    private $text;
 
     /**
      * Constructs a blog item
      */
     public function __construct() {
-        $this->author = new User();
     }
-    
-    public function exchangeArray($data) {
-        $this->id                   =  empty($data['id'])               ? null : $data['id'];
-        $this->authorId             =  empty($data['author'])           ? null : $data['author'];
-        $this->title                =  empty($data['title'])            ? null : $data['title'];
-        $this->description          =  empty($data['description'])      ? null : $data['description'];
-        $this->created              =  empty($data['created'])          ? null : $data['created'];
-        $this->text                 =  empty($data['text'])             ? null : $data['text'];
 
-        $this->author->exchangeArray($data, 'user.');
+    /** GETTERS */
+    /* No setters because post entries can be
+     * cached in repository.*/
+    /** GETTERS */
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
     }
-    
-    public function getArrayCopy() {
-        return [
-            'id'      => $this->id,
-            'author'  => $this->authorId,
-            'description' => $this->description,
-            'created' => $this->created,
-            'text'    => $this->text,
-        ];
+
+    /**
+     * @return mixed
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+
+    /**
+     * @return mixed
+     */
+    public function getCreated()
+    {
+        return $this->created;
+    }
+
+
+    /**
+     * @return mixed
+     */
+    public function getText()
+    {
+        return $this->text;
+    }
+
+
+    /**
+     * @return User
+     */
+    public function getAuthor()
+    {
+        return $this->author;
+    }
+
+
+    /**
+     * @param mixed $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @param mixed $author
+     */
+    public function setAuthor($author)
+    {
+        $this->author = $author;
+    }
+
+    /**
+     * @param mixed $title
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+    }
+
+    /**
+     * @param mixed $created
+     */
+    public function setCreated($created)
+    {
+        $this->created = $created;
+    }
+
+    /**
+     * @param mixed $text
+     */
+    public function setText($text)
+    {
+        $this->text = $text;
     }
 }

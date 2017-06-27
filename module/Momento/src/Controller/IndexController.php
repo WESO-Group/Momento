@@ -1,27 +1,25 @@
 <?php
 
-/**
- * @link      http://github.com/zendframework/ZendSkeletonApplication for the canonical source repository
- * @copyright Copyright (c) 2005-2016 Zend Technologies USA Inc. (http://www.zend.com)
- * @license   http://framework.zend.com/license/new-bsd New BSD License
- */
-
 namespace Momento\Controller;
 
-use Momento\Model\BlogTable;
+use Momento\Model\PostRepositoryInterface;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 
 class IndexController extends AbstractActionController
 {
-    private $blogsTable;
-    
+    /**
+     * @var PostRepositoryInterface
+     */
+    private $postRepository;
+
     /**
      * Constructor
-     * @param BlogTable $table
+     *
+     * @param PostRepositoryInterface $repository
      */
-    public function __construct(BlogTable $table) {
-        $this->blogsTable = $table;
+    public function __construct(PostRepositoryInterface $repository) {
+        $this->postRepository = $repository;
     }
     
     /**
@@ -31,7 +29,7 @@ class IndexController extends AbstractActionController
     public function indexAction()
     {
         return new ViewModel([
-           'blogs' => $this->blogsTable->getBlogs()
+           'posts' => $this->postRepository->findAllPosts()
         ]);
     }
 }
