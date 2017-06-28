@@ -17,21 +17,24 @@ namespace Momento\Model;
 class Post {
 
     private $id;
-    private $author;
     private $title;
-    private $created;
     private $text;
+    private $creationDate;
+    private $authorId;
+    private $numViews;
+    private $nextId;
+    private $prevId;
+
+    /**
+     * @var User
+     */
+    private $author;
 
     /**
      * Constructs a blog item
      */
     public function __construct() {
     }
-
-    /** GETTERS */
-    /* No setters because post entries can be
-     * cached in repository.*/
-    /** GETTERS */
 
     /**
      * @return mixed
@@ -42,42 +45,6 @@ class Post {
     }
 
     /**
-     * @return mixed
-     */
-    public function getTitle()
-    {
-        return $this->title;
-    }
-
-
-    /**
-     * @return mixed
-     */
-    public function getCreated()
-    {
-        return $this->created;
-    }
-
-
-    /**
-     * @return mixed
-     */
-    public function getText()
-    {
-        return $this->text;
-    }
-
-
-    /**
-     * @return User
-     */
-    public function getAuthor()
-    {
-        return $this->author;
-    }
-
-
-    /**
      * @param mixed $id
      */
     public function setId($id)
@@ -86,11 +53,11 @@ class Post {
     }
 
     /**
-     * @param mixed $author
+     * @return mixed
      */
-    public function setAuthor($author)
+    public function getTitle()
     {
-        $this->author = $author;
+        return $this->title;
     }
 
     /**
@@ -102,11 +69,11 @@ class Post {
     }
 
     /**
-     * @param mixed $created
+     * @return mixed
      */
-    public function setCreated($created)
+    public function getText()
     {
-        $this->created = $created;
+        return $this->text;
     }
 
     /**
@@ -116,4 +83,102 @@ class Post {
     {
         $this->text = $text;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getCreationDate()
+    {
+        return $this->creationDate;
+    }
+
+    /**
+     * @param mixed $creationDate
+     */
+    public function setCreationDate($creationDate)
+    {
+        $this->creationDate = $creationDate;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAuthorId()
+    {
+        return $this->authorId;
+    }
+
+    /**
+     * @param mixed $authorId
+     */
+    public function setAuthorId($authorId)
+    {
+        $this->authorId = $authorId;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getNumViews()
+    {
+        return $this->numViews;
+    }
+
+    /**
+     * @param mixed $numViews
+     */
+    public function setNumViews($numViews)
+    {
+        $this->numViews = $numViews;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getNextId()
+    {
+        return $this->nextId;
+    }
+
+    /**
+     * @param mixed $nextId
+     */
+    public function setNextId($nextId)
+    {
+        $this->nextId = $nextId;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPrevId()
+    {
+        return $this->prevId;
+    }
+
+    /**
+     * @param mixed $prevId
+     */
+    public function setPrevId($prevId)
+    {
+        $this->prevId = $prevId;
+    }
+
+    /**
+     * @return User
+     */
+    public function getAuthor()
+    {
+        return $this->author;
+    }
+
+    /**
+     * @param User $author
+     */
+    public function setAuthor($author)
+    {
+        $this->author = $author;
+    }
+
+
 }

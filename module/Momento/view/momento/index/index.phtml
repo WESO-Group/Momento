@@ -39,7 +39,7 @@
                   </div>
                   <div class="post_info">
                       <p><?= $this->escapeHtml($post->getAuthor()->getDisplayName()) ?></p>
-                      <small><?= $this->escapeHtml($post->getCreated()) ?></small>
+                      <small><?= $this->escapeHtml($post->getCreationDate()) ?></small>
                   </div>
 
                   <h2 class="post_desc"><?= $this->escapeHtml($post->getTitle()) ?></h2>

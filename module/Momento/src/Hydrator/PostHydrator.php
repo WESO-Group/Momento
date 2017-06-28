@@ -30,10 +30,13 @@ class PostHydrator implements HydratorInterface
 
         return [
             "id" => $object->getId(),
-            "author" => $object->getAuthor(),
-            "created" => $object->getCreated(),
+            "author_id" => $object->getAuthorId(),
+            "creation_date" => $object->getCreationDate(),
             "text" => $object->getText(),
-            "title" => $object->getTitle()
+            "title" => $object->getTitle(),
+            "num_views" => $object->getNumViews(),
+            "next_id" => $object->getNextId(),
+            "prev_id" => $object->getPrevId()
         ];
     }
 
@@ -41,7 +44,7 @@ class PostHydrator implements HydratorInterface
      * Hydrate $object with the provided $data.
      *
      * @param  array $data
-     * @param  object $object
+     * @param  Post $object
      * @return object
      */
     public function hydrate(array $data, $object)
@@ -51,9 +54,12 @@ class PostHydrator implements HydratorInterface
         }
 
         $object->setId(isset($data["id"]) ? $data["id"] : null);
-        $object->setCreated(isset($data["created"]) ? $data["created"] : null);
+        $object->setCreationDate(isset($data["creation_date"]) ? $data["creation_date"] : null);
         $object->setText(isset($data["text"]) ? $data["text"] : null);
         $object->setTitle(isset($data["title"]) ? $data["title"] : null);
+        $object->setNumViews(isset($data["num_views"]) ? $data["num_views"] : null);
+        $object->setNextId(isset($data["next_id"]) ? $data["next_id"] : null);
+        $object->setPrevId(isset($data["prev_id"]) ? $data["prev_id"] : null);
 
         // Set author data, if provided
         // TODO: make constructor injection
@@ -61,7 +67,7 @@ class PostHydrator implements HydratorInterface
             $userHydrator = new UserHydrator();
             $author = $userHydrator->hydrate($data, new User());
         } else {
-            $author = isset($data["author"]) ? $data["author"] : null;
+            $author = isset($data["author_id"]) ? $data["author_id"] : null;
         }
 
         $object->setAuthor($author);

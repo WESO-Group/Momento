@@ -31,14 +31,15 @@ class UserHydrator implements HydratorInterface
             "id" => $object->getId(),
             "age" => $object->getAge(),
             "avatar" => $object->getAvatar(),
-            "description" => $object->getDescription(),
+            "about" => $object->getAbout(),
             "name" => $object->getName(),
-            "surname" => $object->getSurname(),
+            "nickname" => $object->getNickname(),
             "gender" => $object->getGender(),
-            "lastseen_date" => $object->getLastSeenDate(),
-            "registration_date" => $object->getRegistrationDate(),
-            "level" => $object->getLevel(),
-            "nickname" => $object->getNickname()
+            "is_online" => $object->getIsOnline(),
+            "phone_number" => $object->getPhoneNumber(),
+            "language" => $object->getLanguage(),
+            "num_posts" => $object->getNumPosts(),
+            "account_id" => $object->getAccountId()
         ];
     }
 
@@ -46,7 +47,7 @@ class UserHydrator implements HydratorInterface
      * Hydrate $object with the provided $data.
      *
      * @param  array $data
-     * @param  object $object
+     * @param  User $object
      * @return object
      */
     public function hydrate(array $data, $object)
@@ -58,14 +59,15 @@ class UserHydrator implements HydratorInterface
         $object->setId(isset($data["id"]) ? $data["id"] : null);
         $object->setAge(isset($data["age"]) ? $data["age"] : null);
         $object->setAvatar(isset($data["avatar"]) ? $data["avatar"] : null);
-        $object->setDescription(isset($data["description"]) ? $data["description"] : null);
+        $object->setAbout(isset($data["about"]) ? $data["about"] : null);
         $object->setName(isset($data["name"]) ? $data["name"] : null);
-        $object->setSurname(isset($data["surname"]) ? $data["surname"] : null);
         $object->setGender(isset($data["gender"]) ? $data["gender"] : null);
-        $object->setLastSeenDate(isset($data["lastseen_date"]) ? $data["lastseen_date"] : null);
-        $object->setRegistrationDate(isset($data["registration_date"]) ? $data["registration_date"] : null);
-        $object->setLevel(isset($data["level"]) ? $data["level"] : null);
         $object->setNickname(isset($data["nickname"]) ? $data["nickname"] : null);
+        $object->setIsOnline(isset($data["is_online"]) ? $data["is_online"] : null);
+        $object->setPhoneNumber(isset($data["phone_number"]) ? $data["phone_number"] : null);
+        $object->setLanguage(isset($data["language"]) ? $data["language"] : null);
+        $object->setNumPosts(isset($data["num_posts"]) ? $data["num_posts"] : null);
+        $object->setAccountId(isset($data["account_id"]) ? $data["account_id"] : null);
 
         return $object;
     }

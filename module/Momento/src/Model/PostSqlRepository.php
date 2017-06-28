@@ -16,7 +16,6 @@ use Zend\Db\Sql\Exception\InvalidArgumentException;
 use Zend\Db\Sql\Exception\RuntimeException;
 use Zend\Db\Sql\Sql;
 use Zend\Hydrator\HydratorInterface;
-use Zend\Hydrator\Reflection as ReflectionHydrator;
 
 class PostSqlRepository implements PostRepositoryInterface
 {
@@ -51,10 +50,10 @@ class PostSqlRepository implements PostRepositoryInterface
     {
         $sql = new Sql($this->db);
 
-        $select = $sql->select('blogs')->join(
+        $select = $sql->select('posts')->join(
             ["u" => "users"],
-            "u.id = blogs.author",
-            ["name", "surname", "nickname", "avatar"]
+            "u.id = author_id",
+            ["name", "nickname", "avatar"]
         );
 
         $statement = $sql->prepareStatementForSqlObject($select);
@@ -76,7 +75,7 @@ class PostSqlRepository implements PostRepositoryInterface
     public function findPost($id)
     {
         $sql = new Sql($this->db);
-        $select = $sql->select('blogs');
+        $select = $sql->select('posts');
         $select->where(['id = ?' => $id]);
         $statement = $sql->prepareStatementForSqlObject($select);
         $result = $statement->execute();

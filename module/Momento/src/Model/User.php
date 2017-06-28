@@ -14,23 +14,24 @@ class User
 
     private $id;
     private $name;
-    private $surname;
     private $nickname;
-    private $gender;
-    private $description;
+    private $email;
+    private $phoneNumber;
+    private $about;
     private $age;
-    private $registrationDate;
-    private $lastSeenDate;
-    private $level;
+    private $isOnline;
+    private $gender;
+    private $language;
+    private $numPosts;
     private $avatar;
+    private $account_id;
 
     public function __construct()
     {
     }
 
     public function getDisplayName() {
-        return $this->name . ' ' .
-            $this->surname . ' (' .
+        return $this->name .  ' (' .
             $this->nickname . ')';
     }
 
@@ -43,91 +44,19 @@ class User
     }
 
     /**
-     * @return mixed
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getSurname()
-    {
-        return $this->surname;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getNickname()
-    {
-        return $this->nickname;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getGender()
-    {
-        return $this->gender;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getDescription()
-    {
-        return $this->description;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getAge()
-    {
-        return $this->age;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getRegistrationDate()
-    {
-        return $this->registrationDate;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getLastSeenDate()
-    {
-        return $this->lastSeenDate;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getLevel()
-    {
-        return $this->level;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getAvatar()
-    {
-        return $this->avatar;
-    }
-
-    /**
      * @param mixed $id
      */
     public function setId($id)
     {
         $this->id = $id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getName()
+    {
+        return $this->name;
     }
 
     /**
@@ -139,11 +68,11 @@ class User
     }
 
     /**
-     * @param mixed $surname
+     * @return mixed
      */
-    public function setSurname($surname)
+    public function getNickname()
     {
-        $this->surname = $surname;
+        return $this->nickname;
     }
 
     /**
@@ -155,19 +84,59 @@ class User
     }
 
     /**
-     * @param mixed $gender
+     * @return mixed
      */
-    public function setGender($gender)
+    public function getEmail()
     {
-        $this->gender = $gender;
+        return $this->email;
     }
 
     /**
-     * @param mixed $description
+     * @param mixed $email
      */
-    public function setDescription($description)
+    public function setEmail($email)
     {
-        $this->description = $description;
+        $this->email = $email;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPhoneNumber()
+    {
+        return $this->phoneNumber;
+    }
+
+    /**
+     * @param mixed $phoneNumber
+     */
+    public function setPhoneNumber($phoneNumber)
+    {
+        $this->phoneNumber = $phoneNumber;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAbout()
+    {
+        return $this->about;
+    }
+
+    /**
+     * @param mixed $about
+     */
+    public function setAbout($about)
+    {
+        $this->about = $about;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAge()
+    {
+        return $this->age;
     }
 
     /**
@@ -179,27 +148,75 @@ class User
     }
 
     /**
-     * @param mixed $registrationDate
+     * @return mixed
      */
-    public function setRegistrationDate($registrationDate)
+    public function getIsOnline()
     {
-        $this->registrationDate = $registrationDate;
+        return $this->isOnline;
     }
 
     /**
-     * @param mixed $lastSeenDate
+     * @param mixed $isOnline
      */
-    public function setLastSeenDate($lastSeenDate)
+    public function setIsOnline($isOnline)
     {
-        $this->lastSeenDate = $lastSeenDate;
+        $this->isOnline = $isOnline;
     }
 
     /**
-     * @param mixed $level
+     * @return mixed
      */
-    public function setLevel($level)
+    public function getGender()
     {
-        $this->level = $level;
+        return $this->gender;
+    }
+
+    /**
+     * @param mixed $gender
+     */
+    public function setGender($gender)
+    {
+        $this->gender = $gender;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLanguage()
+    {
+        return $this->language;
+    }
+
+    /**
+     * @param mixed $language
+     */
+    public function setLanguage($language)
+    {
+        $this->language = $language;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getNumPosts()
+    {
+        return $this->numPosts;
+    }
+
+    /**
+     * @param mixed $numPosts
+     */
+    public function setNumPosts($numPosts)
+    {
+        $this->numPosts = $numPosts;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAvatar()
+    {
+        return $this->avatar;
     }
 
     /**
@@ -208,6 +225,22 @@ class User
     public function setAvatar($avatar)
     {
         $this->avatar = $avatar;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAccountId()
+    {
+        return $this->account_id;
+    }
+
+    /**
+     * @param mixed $account_id
+     */
+    public function setAccountId($account_id)
+    {
+        $this->account_id = $account_id;
     }
 
 
